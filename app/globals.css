@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@config "../tailwind.config.js";
+@tailwind utilities;
+
+
+@plugin "../heroui-plugin.js";
+@source "../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}";
+
+:root {
+    color-scheme: dark;
+}
+
+@layer base {
+    :root {
+        color-scheme: dark;
+    }
+
+    body {
+        @apply bg-background text-foreground font-montserrat;
+        color-scheme: dark;
+    }
+}
+
+@layer components {
+    .glass-card {
+        @apply bg-content1/50 backdrop-blur-sm border border-default-100 rounded-xl;
+    }
+
+    .gradient-text {
+        @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+    }
+}
